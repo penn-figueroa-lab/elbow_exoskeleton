@@ -2,7 +2,6 @@
 
 > **Description**: I am exploring a sensor fusion framework integrating kinematic, torque, and EMG data to robustly estimate user state for adaptive control of a single-DOF elbow exoskeleton during repetitive lifting tasks. Time-varying human dynamics such as fatigue, impedance changes, and overlapping kinematics lead to misclassification of user state and suboptimal assistance when relying on single sensing modalities. Through comparative controller evaluation and ablation studies, this project is aimed to quantify how multi-modal sensing (EMG + IMU + MoCap) improves adaptive control performance and enables more reliable, responsive assistance. For this project, I developed a lightweight exoskeleton (450 g arm link + 650 g backpack) powered by a Cubemars AK45-36 KV80 BLDC actuator (15 Nm output torque, 120° ROM).
 
-[![Institution](https://img.shields.io/badge/University%20of%20Pennsylvania-Research-darkblue?style=for-the-badge)](https://www.upenn.edu)
 [![Hardware](https://img.shields.io/badge/Actuator-Cubemars%20AK45--36-gold?style=for-the-badge)](https://github.com)
 [![Torque](https://img.shields.io/badge/Max%20Torque-15%20Nm-green?style=for-the-badge)](https://github.com)
 [![Sensing](https://img.shields.io/badge/Fusion-EMG%20%2B%20IMU%20%2B%20MoCap-orange?style=for-the-badge)](https://github.com)
@@ -10,8 +9,8 @@
 
 <div align="center">
 <p float="left">
-  <img src="images/subject1.jpeg" alt="Block Detection Simulation" width="40%" />
-  <img src="images/exoren1.png" alt="Block Detection Hardware" width="40%" />
+  <img src="Images/subject1.jpeg" alt="Block Detection Simulation" width="40%" />
+  <img src="Images/exoren1.png" alt="Block Detection Hardware" width="40%" />
 </p>
 </div>
 
@@ -141,30 +140,6 @@ Upper limb exoskeletons for repetitive industrial tasks must adapt to time-varyi
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### Data Flow
-
-```
-        EMG (biceps/triceps) + IMU (elbow) + MoCap
-                          │
-                          ▼
-                  Sensor Fusion
-                  (Kalman filter)
-                          │
-              ┌───────────┴───────────┐
-              │                       │
-              ▼                       ▼
-        User State              Fatigue Index
-        (angle, vel, EMG)       (0 → 1)
-              │                       │
-              └──────────┬────────────┘
-                         ▼
-              Adaptive Controller
-              Select torque profile
-                         │
-                         ▼
-              Cubemars BLDC Actuator
-              Apply elbow assistance
-```
 
 ---
 
@@ -172,8 +147,8 @@ Upper limb exoskeletons for repetitive industrial tasks must adapt to time-varyi
 
 <div align="center">
 <p float="left">
-  <img src="images/circuit.png" alt="Block Detection Simulation" width="40%" />
-  <img src="images/pu.jpeg" alt="Block Detection Hardware" width="40%" />
+  <img src="Images/circuit.png" alt="Block Detection Simulation" width="40%" />
+  <img src="Images/pu.jpeg" alt="Block Detection Hardware" width="40%" />
 </p>
 </div>
 
