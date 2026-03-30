@@ -9,7 +9,7 @@
 
 <div align="center">
 <p float="left">
-  <img src="Images/subject1.jpeg" alt="Block Detection Simulation" width="40%" />
+  <img src="Images/subject1.jpeg" alt="Block Detection Simulation" width="45%" />
   <img src="Images/exoren1.png" alt="Block Detection Hardware" width="40%" />
 </p>
 </div>
@@ -148,7 +148,7 @@ Upper limb exoskeletons for repetitive industrial tasks must adapt to time-varyi
 <div align="center">
 <p float="left">
   <img src="Images/circuit.png" alt="Block Detection Simulation" width="40%" />
-  <img src="Images/pu.jpeg" alt="Block Detection Hardware" width="40%" />
+  <img src="Images/pu.jpeg" alt="Block Detection Hardware" width="45%" />
 </p>
 </div>
 
