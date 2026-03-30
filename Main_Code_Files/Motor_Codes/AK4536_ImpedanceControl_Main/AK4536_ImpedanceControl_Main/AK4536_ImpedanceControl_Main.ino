@@ -1,4 +1,4 @@
-// CubeMars AK45-36 MIT Mode POSITION CONTROL with Portenta H7 on CAN1
+// CubeMars AK45-36 MIT Mode Impedance Control with Portenta H7 on CAN1
 
 // Libraries Required
 #include <mbed.h>
@@ -31,8 +31,8 @@ const unsigned long CAN_ID = MOTOR_ID;
 // Set Value Params
 float p_in = 0.0f;
 float v_in = 0.0f;
-float kp_in = 200.0f;  // HIGH stiffness for position control
-float kd_in = 3.0f;    // HIGH damping to prevent oscillation
+float kp_in = 10.0f; // Impedance stiffness (spring)
+float kd_in = 1.0f;  // Impedance damping
 float t_in = 0.0f;
 
 // Measured Value Params
@@ -90,7 +90,6 @@ void unpack_reply(uint8_t* dat, uint8_t len) {
 
   lastReceiveTime = millis();
 
-  // Optional: Visual feedback on CAN RX
   digitalWrite(LED_BLUE, LOW);
   delayMicroseconds(100);
   digitalWrite(LED_BLUE, HIGH);
@@ -202,7 +201,7 @@ void setup() {
 }
 
 // ############################
-// MAIN LOOP - 1kHz Position Control
+// MAIN LOOP - 1kHz Trajectory
 // ############################
 
 void loop() {
@@ -240,16 +239,25 @@ void loop() {
     sweep_dir = 1;  
   }
 
-  // 4. Update MIT parameters for POSITION CONTROL
+  // 4. Update MIT parameters for Impedance Control
   p_in = current_pos;
   
-  // CRITICAL: Velocity feedforward for smooth tracking
-  v_in = sweep_dir * sweep_speed;
+
+  // Note: For pure position compliance, v_in can be set to 0.0f. 
+  // However, supplying the intended velocity (v_in = sweep_dir * sweep_speed) 
+  // prevents the Kd damper from fighting the intended motion, resulting in smoother sweeps.
+
+  //v_in = sweep_dir * sweep_speed; 
+
+  v_in = 0;
   
-  // High gains for stiff position control
-  kp_in = 200.0f;  // 20x stiffer than impedance mode
-  kd_in = 3.0f;    // Damping scaled proportionally
-  t_in = 0.0f;     // No feedforward torque needed
+
+  kp_in = 10.0f; // Soft virtual spring
+  kd_in = 1.0f;  // Virtual damper
+  t_in = 0.0f;   // No feedforward force needed here
+
+
+
 
   // 5. Send command to motor
   pack_cmd();

@@ -1,4 +1,5 @@
-// CubeMars AK45-36 MIT Mode POSITION CONTROL with Portenta H7 on CAN1
+// CubeMars AK45-36 MIT Mode Control with Portenta H7 on CAN1
+
 
 // Libraries Required
 #include <mbed.h>
@@ -31,8 +32,8 @@ const unsigned long CAN_ID = MOTOR_ID;
 // Set Value Params
 float p_in = 0.0f;
 float v_in = 0.0f;
-float kp_in = 200.0f;  // HIGH stiffness for position control
-float kd_in = 3.0f;    // HIGH damping to prevent oscillation
+float kp_in = 5.0f;
+float kd_in = 1.0f;
 float t_in = 0.0f;
 
 // Measured Value Params
@@ -41,11 +42,16 @@ float v_out = 0.0f;
 float t_out = 0.0f;
 
 // Timing
+uint32_t lastSendTime    = 0;
 uint32_t lastReceiveTime = 0;
+
+#define OUTER_KP 10.5f   // proportional gain on position error  (tune this)
+#define OUTER_KD 2.5f  // derivative gain on velocity error     (tune this)
 
 /*********************************************************************************************************
   CONVERSION FUNCTIONS
 *********************************************************************************************************/
+
 
 unsigned int float_to_uint(float x, float x_min, float x_max, int bits) {
   float span = x_max - x_min;
@@ -73,13 +79,16 @@ float uint_to_float(unsigned int x_int, float x_min, float x_max, int bits) {
   return pgg;
 }
 
+
 /*********************************************************************************************************
   CAN COMMUNICATION SECTION 
 *********************************************************************************************************/
 
+
 void unpack_reply(uint8_t* dat, uint8_t len) {
   if (len != 6) return;
 
+  unsigned int id    = dat[0];
   unsigned int p_int = (dat[1] << 8) | dat[2];
   unsigned int v_int = (dat[3] << 4) | (dat[4] >> 4);
   unsigned int i_int = ((dat[4] & 0xF) << 8) | dat[5];
@@ -90,7 +99,6 @@ void unpack_reply(uint8_t* dat, uint8_t len) {
 
   lastReceiveTime = millis();
 
-  // Optional: Visual feedback on CAN RX
   digitalWrite(LED_BLUE, LOW);
   delayMicroseconds(100);
   digitalWrite(LED_BLUE, HIGH);
@@ -127,9 +135,11 @@ void pack_cmd() {
   can1.write(msg);
 }
 
+
 /*********************************************************************************************************
   MOTOR MODE SECTION 
 *********************************************************************************************************/
+
 
 bool EnterMotorMode() {
   mbed::CANMessage msg;
@@ -144,10 +154,24 @@ bool EnterMotorMode() {
   msg.data[6] = 0xFF;
   msg.data[7] = 0xFC;
 
-  if (!can1.write(msg)) return false;
+  if (!can1.write(msg)) {
+    return false;
+  }
 
-  delay(50);
-  return true;
+  for (int i = 0; i < 5; i++) {
+    pack_cmd();
+    delay(10);
+
+    mbed::CANMessage msgIn;
+    if (can1.read(msgIn, 0)) {
+      if (msgIn.id == CAN_ID && msgIn.len == 6) {
+        unpack_reply(msgIn.data, msgIn.len);
+        digitalWrite(LED_GREEN, LOW);
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 void Zero() {
@@ -164,7 +188,51 @@ void Zero() {
   msg.data[7] = 0xFE;
 
   can1.write(msg);
-  delay(100);
+
+  for (int i = 0; i < 5; i++) {
+    delay(10);
+    pack_cmd();
+  }
+}
+
+
+// #############
+
+void moveTo(float target_pos, uint32_t dwell_ms) {
+  p_in = target_pos;
+
+  // --- original: send command, wait briefly, then read the reply ---
+  pack_cmd();
+  delay(5);
+
+  mbed::CANMessage msgIn;
+  if (can1.read(msgIn, 0)) {
+    if (msgIn.id == CAN_ID && msgIn.len == 6) {
+      unpack_reply(msgIn.data, msgIn.len);
+    }
+  }
+
+  // --- NEW: outer PD correction using the feedback just received ---
+  float pos_error = target_pos - p_out;   // how far off we are in position
+  float vel_error = 0.0f - v_out;         // we want zero velocity at setpoint
+
+  float correction = (OUTER_KP * pos_error) + (OUTER_KD * vel_error);
+
+  // Clamp correction to a safe window so we never command a wild jump
+  correction = constrain(correction, -0.5f, 0.5f);
+
+  // Apply correction: shift the commanded position toward where we need to be
+  p_in = constrain(target_pos + correction, P_MIN, P_MAX);
+
+  // Send the corrected command
+  pack_cmd();
+
+  // Restore p_in to the clean target for the next call
+  p_in = target_pos;
+  // ----------------------------------------------------------------
+
+  // Wait the rest of the dwell time at this position
+  delay(dwell_ms - 10);
 }
 
 /*********************************************************************************************************
@@ -172,6 +240,10 @@ void Zero() {
 *********************************************************************************************************/
 
 Board board;
+
+
+// #####################
+
 
 void setup() {
 
@@ -196,64 +268,53 @@ void setup() {
   EnterMotorMode();
   delay(1000);
 
+  lastSendTime    = millis();
+  lastReceiveTime = millis();
+
   digitalWrite(LED_GREEN, LOW);
   digitalWrite(LED_BLUE,  LOW);
   digitalWrite(LED_RED,   LOW);
+  delay(2000);
 }
 
+
+
 // ############################
-// MAIN LOOP - 1kHz Position Control
-// ############################
+// MAIN LOOP
+
 
 void loop() {
 
-  // 1. Unpack incoming CAN messages without blocking (Continuous)
+  // Non-blocking feedback read
   mbed::CANMessage msgIn;
   if (can1.read(msgIn, 0)) {
     if (msgIn.id == CAN_ID && msgIn.len == 6) {
       unpack_reply(msgIn.data, msgIn.len);
     }
   }
-  
-  // 2. 1 kHz (1000 microsecond) Timer Gate
+
+   // ---------- 1 kHz Timing ----------
   static uint32_t lastTime = micros();
-  const uint32_t period_us = 1000;   
+  const uint32_t period_us = 1000;   // 1000 µs = 1 kHz
 
   uint32_t now = micros();
   if (now - lastTime < period_us) return;
   lastTime += period_us;
-
-  // 3. Trajectory Generation Variables
-  static float current_pos = 0.0f;
-  static float sweep_speed = 0.25f; // rad/s
-  static int sweep_dir = 1;         // 1 for forward, -1 for reverse
-
-  // Calculate new position step (0.25 rad/s * 0.001 s = 0.00025 rad)
-  current_pos += sweep_dir * sweep_speed * 0.001f;
-
-  // Boundary checks to reverse direction automatically
-  if (current_pos >= 1.570f) {
-    current_pos = 1.570f;
-    sweep_dir = -1; 
-  } else if (current_pos <= 0.0f) {
-    current_pos = 0.0f;
-    sweep_dir = 1;  
-  }
-
-  // 4. Update MIT parameters for POSITION CONTROL
-  p_in = current_pos;
   
-  // CRITICAL: Velocity feedforward for smooth tracking
-  v_in = sweep_dir * sweep_speed;
-  
-  // High gains for stiff position control
-  kp_in = 200.0f;  // 20x stiffer than impedance mode
-  kd_in = 3.0f;    // Damping scaled proportionally
-  t_in = 0.0f;     // No feedforward torque needed
+  // -----------------------------------
 
-  // 5. Send command to motor
+  // Set pure torque control parameters
+  p_in = 0.0f;      // ignored in torque mode
+  v_in = 0.0f;      // ignored in torque mode
+  kp_in = 0.0f;     // disable position loop
+  kd_in = 0.0f;     // disable velocity loop
+  t_in = 1.0f;      // constant 1 Nm torque (keep small for safety)
+
+  // Send torque command
   pack_cmd();
+  
 }
+
 
 /*********************************************************************************************************
   END FILE
