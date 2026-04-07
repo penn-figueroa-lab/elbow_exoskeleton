@@ -1,4 +1,4 @@
-# 💪 Comparative Control Study for Elbow Exoskeleton Under Time-Varying Human Dynamics (On-Going*)
+# 💪 Elbow Exoskeleton Project (On-Going*)
 
 > **Description**: We are developing a lightweight exoskeleton (450 g arm link + 650 g backpack) powered by a Cubemars AK45-36 KV80 BLDC actuator (15 Nm output torque, 120° ROM).
 
