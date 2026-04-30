@@ -14,13 +14,6 @@
 </div>
 
 
-<div align="center">
-<p float="left">
-  <img src="Images/subject1.jpeg" alt="Block Detection Simulation" width="45%" />
-  <img src="Images/exoren1.png" alt="Block Detection Hardware" width="40%" />
-</p>
-</div>
-
 **Full System Pipeline:**
 EMG + IMU + MoCap → Sensor Fusion → User State Estimation → Adaptive Controller → BLDC Actuator → Elbow Assistance
 
@@ -161,6 +154,15 @@ Upper limb exoskeletons for repetitive industrial tasks must adapt to time-varyi
 
 
 ### 1. Hardware Design
+
+
+
+<div align="center">
+<p float="left">
+  <img src="Images/subject1.jpeg" alt="Block Detection Simulation" width="45%" />
+  <img src="Images/exoren1.png" alt="Block Detection Hardware" width="40%" />
+</p>
+</div>
 
 | Component | Specification |
 |-----------|---------------|
