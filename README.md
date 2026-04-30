@@ -13,10 +13,6 @@
 </p>
 </div>
 
-
-**Full System Pipeline:**
-EMG + IMU + MoCap → Sensor Fusion → User State Estimation → Adaptive Controller → BLDC Actuator → Elbow Assistance
-
 </div>
 
 ---
