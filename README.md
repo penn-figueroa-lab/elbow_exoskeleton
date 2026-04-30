@@ -1,7 +1,5 @@
 # 💪 Elbow Exoskeleton Project (On-Going*)
 
-> **Description**: We are developing a lightweight exoskeleton (450 g arm link + 650 g backpack) powered by a Cubemars AK45-36 KV80 BLDC actuator (15 Nm output torque, 120° ROM).
-
 [![Hardware](https://img.shields.io/badge/Actuator-Cubemars%20AK45--36-gold?style=for-the-badge)](https://github.com)
 [![Torque](https://img.shields.io/badge/Max%20Torque-15%20Nm-green?style=for-the-badge)](https://github.com)
 [![Sensing](https://img.shields.io/badge/Fusion-EMG%20%2B%20IMU%20%2B%20MoCap-orange?style=for-the-badge)](https://github.com)
@@ -11,7 +9,7 @@
 <div align="center">
 <p float="left">
   <img src="Images/group_pic.jpeg" alt="Block Detection Simulation" width="45%" />
- 
+
 </p>
 </div>
 
@@ -22,6 +20,7 @@
   <img src="Images/exoren1.png" alt="Block Detection Hardware" width="40%" />
 </p>
 </div>
+> **Description**: We are developing a lightweight exoskeleton (450 g arm link + 650 g backpack) powered by a Cubemars AK45-36 KV80 BLDC actuator (15 Nm output torque, 120° ROM).
 
 **Full System Pipeline:**
 EMG + IMU + MoCap → Sensor Fusion → User State Estimation → Adaptive Controller → BLDC Actuator → Elbow Assistance
