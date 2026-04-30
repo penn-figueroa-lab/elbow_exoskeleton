@@ -20,7 +20,6 @@
   <img src="Images/exoren1.png" alt="Block Detection Hardware" width="40%" />
 </p>
 </div>
-> **Description**: We are developing a lightweight exoskeleton (450 g arm link + 650 g backpack) powered by a Cubemars AK45-36 KV80 BLDC actuator (15 Nm output torque, 120° ROM).
 
 **Full System Pipeline:**
 EMG + IMU + MoCap → Sensor Fusion → User State Estimation → Adaptive Controller → BLDC Actuator → Elbow Assistance
