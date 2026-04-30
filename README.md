@@ -8,7 +8,7 @@
 
 <div align="center">
 <p float="left">
-  <img src="Images/group_pic.jpeg" alt="Block Detection Simulation" width="45%" />
+  <img src="Images/group_pic.jpeg" alt="Block Detection Simulation" width="70%" />
 
 </p>
 </div>
