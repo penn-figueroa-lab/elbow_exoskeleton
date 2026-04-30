@@ -7,6 +7,15 @@
 [![Sensing](https://img.shields.io/badge/Fusion-EMG%20%2B%20IMU%20%2B%20MoCap-orange?style=for-the-badge)](https://github.com)
 [![Control](https://img.shields.io/badge/Study-Comparative%20Controllers-blue?style=for-the-badge)](https://github.com)
 
+
+<div align="center">
+<p float="left">
+  <img src="Images/group_pic.jpeg" alt="Block Detection Simulation" width="45%" />
+ 
+</p>
+</div>
+
+
 <div align="center">
 <p float="left">
   <img src="Images/subject1.jpeg" alt="Block Detection Simulation" width="45%" />
