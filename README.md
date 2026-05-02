@@ -83,46 +83,47 @@ Upper limb exoskeletons for repetitive industrial tasks must adapt to time-varyi
 ```
 elbow_exoskeleton/
 ├── Images/                        # Photos and renders used in README
-├── Elbow Exoskeleton - Left/      # SolidWorks files for the left arm assembly
-│   ├── Elbow Exoskeleton - Left.sldasm
-│   ├── Forearm linkage assembly.sldasm
-│   ├── Forearm linkage base.sldprt
-│   ├── Forearm linkage front.sldprt
-│   ├── Forearm orthotic R45 - Left.sldprt
-│   ├── Forearm orthotic structural insert.sldprt
-│   ├── Mechanical stop cover.sldprt
-│   ├── Upper arm linkage - Left.sldprt
-│   ├── Upper arm orthotic R55 - Left.sldprt
-│   ├── Upper arm orthotic structural insert.sldprt
-│   ├── AK45-36-KV80 motor.sldprt
-│   ├── ANR Muscle Sense Model M40 EMG sensor.sldprt
-│   ├── 90592A016_Steel Hex Nut_M6.sldprt
-│   ├── 92005A427_Steel Pan Head Phillips Screw_M6_18mm.sldprt
-│   └── 92005A435_Steel Pan Head Phillips Screw_M6_30mm.sldprt
-├── Elbow Exoskeleton - Right/     # SolidWorks files for the right arm assembly
-│   ├── Elbow Exoskeleton - Right.sldasm
-│   ├── Forearm linkage assembly.sldasm
-│   ├── Forearm linkage base.sldprt
-│   ├── Forearm linkage front.sldprt
-│   ├── Forearm orthotic R45 - Right.sldprt
-│   ├── Forearm orthotic structural insert.sldprt
-│   ├── Mechanical stop cover.sldprt
-│   ├── Upper arm linkage - Right.sldprt
-│   ├── Upper arm orthotic R55 - Right.sldprt
-│   ├── Upper arm orthotic structural insert.sldprt
-│   ├── AK45-36-KV80 motor.sldprt
-│   ├── ANR Muscle Sense Model M40 EMG sensor.sldprt
-│   ├── 90592A016_Steel Hex Nut_M6.sldprt
-│   ├── 92005A427_Steel Pan Head Phillips Screw_M6_18mm.sldprt
-│   └── 92005A435_Steel Pan Head Phillips Screw_M6_30mm.sldprt
-├── STL files/                     # Print-ready STL files for all printed parts
-│   ├── Forearm linkage assembly.stl
-│   ├── Forearm orthotic R35/R40/R45 - Left/Right.stl  (6 files)
-│   ├── Upper arm orthotic R45/R50/R55 - Left/Right.stl (6 files)
-│   ├── Forearm orthotic structural insert.stl
-│   ├── Upper arm orthotic structural insert.stl
-│   ├── Upper arm linkage - Left/Right.stl
-│   └── Mechanical stop cover.stl
+├── CAD/
+│   ├── Elbow Exoskeleton - Left/  # SolidWorks files for the left arm assembly
+│   │   ├── Elbow Exoskeleton - Left.sldasm
+│   │   ├── Forearm linkage assembly.sldasm
+│   │   ├── Forearm linkage base.sldprt
+│   │   ├── Forearm linkage front.sldprt
+│   │   ├── Forearm orthotic R45 - Left.sldprt
+│   │   ├── Forearm orthotic structural insert.sldprt
+│   │   ├── Mechanical stop cover.sldprt
+│   │   ├── Upper arm linkage - Left.sldprt
+│   │   ├── Upper arm orthotic R55 - Left.sldprt
+│   │   ├── Upper arm orthotic structural insert.sldprt
+│   │   ├── AK45-36-KV80 motor.sldprt
+│   │   ├── ANR Muscle Sense Model M40 EMG sensor.sldprt
+│   │   ├── 90592A016_Steel Hex Nut_M6.sldprt
+│   │   ├── 92005A427_Steel Pan Head Phillips Screw_M6_18mm.sldprt
+│   │   └── 92005A435_Steel Pan Head Phillips Screw_M6_30mm.sldprt
+│   ├── Elbow Exoskeleton - Right/ # SolidWorks files for the right arm assembly
+│   │   ├── Elbow Exoskeleton - Right.sldasm
+│   │   ├── Forearm linkage assembly.sldasm
+│   │   ├── Forearm linkage base.sldprt
+│   │   ├── Forearm linkage front.sldprt
+│   │   ├── Forearm orthotic R45 - Right.sldprt
+│   │   ├── Forearm orthotic structural insert.sldprt
+│   │   ├── Mechanical stop cover.sldprt
+│   │   ├── Upper arm linkage - Right.sldprt
+│   │   ├── Upper arm orthotic R55 - Right.sldprt
+│   │   ├── Upper arm orthotic structural insert.sldprt
+│   │   ├── AK45-36-KV80 motor.sldprt
+│   │   ├── ANR Muscle Sense Model M40 EMG sensor.sldprt
+│   │   ├── 90592A016_Steel Hex Nut_M6.sldprt
+│   │   ├── 92005A427_Steel Pan Head Phillips Screw_M6_18mm.sldprt
+│   │   └── 92005A435_Steel Pan Head Phillips Screw_M6_30mm.sldprt
+│   └── STL files/                 # Print-ready STL files for all printed parts
+│       ├── Forearm linkage assembly.stl
+│       ├── Forearm orthotic R35/R40/R45 - Left/Right.stl  (6 files)
+│       ├── Upper arm orthotic R45/R50/R55 - Left/Right.stl (6 files)
+│       ├── Forearm orthotic structural insert.stl
+│       ├── Upper arm orthotic structural insert.stl
+│       ├── Upper arm linkage - Left/Right.stl
+│       └── Mechanical stop cover.stl
 ├── Print Files/
 │   ├── BambuStudio/               # .3mf Bambu Studio project files with pre-configured print settings
 │   └── Print Orientation Guide/   # Screenshots showing recommended print orientations
@@ -381,11 +382,7 @@ The SolidWorks files are organised into two self-contained assembly folders — 
 
 > Each assembly folder includes only one orthotic size for the assembly reference model. All sizes (R35/R40/R45 forearm; R45/R50/R55 upper arm) are available as STL files in the `STL files/` folder for printing.
 
-<div align="center">
-<img src="Images/cad_folder_left.png" alt="Left assembly CAD folder" width="48%" />
-<img src="Images/cad_folder_right.png" alt="Right assembly CAD folder" width="48%" />
-<br><em>SolidWorks CAD folders for the Left (left) and Right (right) arm assemblies</em>
-</div>
+
 
 ---
 
