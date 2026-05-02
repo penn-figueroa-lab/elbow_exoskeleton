@@ -88,7 +88,7 @@ elbow_exoskeleton/
 │   ├── Forearm linkage assembly.sldasm
 │   ├── Forearm linkage base.sldprt
 │   ├── Forearm linkage front.sldprt
-│   ├── Forearm orthotic R35 - Left.sldprt
+│   ├── Forearm orthotic R45 - Left.sldprt
 │   ├── Forearm orthotic structural insert.sldprt
 │   ├── Mechanical stop cover.sldprt
 │   ├── Upper arm linkage - Left.sldprt
@@ -104,7 +104,7 @@ elbow_exoskeleton/
 │   ├── Forearm linkage assembly.sldasm
 │   ├── Forearm linkage base.sldprt
 │   ├── Forearm linkage front.sldprt
-│   ├── Forearm orthotic R35 - Right.sldprt
+│   ├── Forearm orthotic R45 - Right.sldprt
 │   ├── Forearm orthotic structural insert.sldprt
 │   ├── Mechanical stop cover.sldprt
 │   ├── Upper arm linkage - Right.sldprt
@@ -129,7 +129,7 @@ elbow_exoskeleton/
 └── README.md
 ```
 
-> **Note on Left vs. Right folders:** Each assembly folder contains all parts needed to open and rebuild that assembly in SolidWorks — shared parts (forearm linkage, structural inserts, hardware) are duplicated across both folders for self-containment. The only parts that differ between folders are the upper arm linkage, upper arm orthotic, and forearm orthotic, which are mirrored versions of each other. Only **one orthotic size is included per assembly folder** (the example shown uses R35 forearm / R55 upper arm) — select the appropriate size for your subject from the full set in `STL files/`.
+> **Note on Left vs. Right folders:** Each assembly folder contains all parts needed to open and rebuild that assembly in SolidWorks — shared parts (forearm linkage, structural inserts, hardware) are duplicated across both folders for self-containment. The only parts that differ between folders are the upper arm linkage, upper arm orthotic, and forearm orthotic, which are mirrored versions of each other. Only **one orthotic size is included per assembly folder** (the example shown uses R45 forearm / R55 upper arm) — select the appropriate size for your subject from the full set in `STL files/`.
 
 ---
 
@@ -230,8 +230,8 @@ The **forearm linkage assembly is identical** across both versions. Only the fol
 
 <div align="center">
 <p float="left">
-  <img src="Images/exo_left.png" alt="Left arm version" width="40%" />
-  <img src="Images/exo_right.png" alt="Right arm version" width="40%" />
+  <img src="Images/Elbow Exo Left Hand Iso View.png" alt="Left arm version" width="40%" />
+  <img src="Images/Elbow Exo Right Hand Iso View.png" alt="Right arm version" width="40%" />
 </p>
 <em>Left (left) and Right (right) arm versions of the elbow exoskeleton assembly</em>
 </div>
@@ -276,16 +276,16 @@ The **upper arm orthotic** additionally includes **2 recessed EMG sensor slots**
 
 <div align="center">
 <p float="left">
-  <img src="Images/upper_arm_orthotic.png" alt="Upper arm orthotic with EMG slots" width="45%" />
-  <img src="Images/forearm_orthotic.png" alt="Forearm orthotic" width="40%" />
+  <img src="Images/Elbow Exo Upper Arm Orthotic R55 Left.png" alt="Upper arm orthotic with EMG slots" width="45%" />
+  <img src="Images/Elbow Exo Forearm Orthotic R45 Left.png" alt="Forearm orthotic" width="40%" />
 </p>
 <em>Upper arm orthotic (left) showing EMG sensor slots and shoe lace holes; Forearm orthotic (right) showing tapered geometry and lace holes</em>
 </div>
 
 <div align="center">
 <p float="left">
-  <img src="Images/upper_arm_orthotic_render.png" alt="Upper arm orthotic close-up render" width="45%" />
-  <img src="Images/forearm_orthotic_render.png" alt="Forearm orthotic close-up render" width="45%" />
+  <img src="Images/Elbow Exo Upper Arm Orthotic R55 Left.png" alt="Upper arm orthotic close-up render" width="45%" />
+  <img src="Images/Elbow Exo Forearm Orthotic R45 Left.png" alt="Forearm orthotic close-up render" width="45%" />
 </p>
 <em>Close-up renders of the upper arm orthotic (left) and forearm orthotic (right)</em>
 </div>
@@ -312,15 +312,15 @@ To compensate, the forearm linkage is split into two pieces — a **base** and a
 
 <div align="center">
 <p float="left">
-  <img src="Images/snap_fit_exploded.png" alt="Snap-fit two separate pieces" width="60%" />
+  <img src="Images/Elbow Exo Forearm Linkage in 2 Pieces.png" alt="Snap-fit two separate pieces" width="60%" />
 </p>
 <em>The two pieces of the forearm linkage — base (bottom) and front (top) — before assembly</em>
 </div>
 
 <div align="center">
 <p float="left">
-  <img src="Images/snap_fit_closed.png" alt="Snap-fit closed/retracted position" width="45%" />
-  <img src="Images/snap_fit_open.png" alt="Snap-fit open/extended position" width="45%" />
+  <img src="Images/Elbow Exo Forearm Linkage Close Position.png" alt="Snap-fit closed/retracted position" width="45%" />
+  <img src="Images/Elbow Exo Forearm Linkage Open Position.png" alt="Snap-fit open/extended position" width="45%" />
 </p>
 <em>Snap-fit forearm linkage in retracted position (left) and extended position (right), passively accommodating the ~8 mm elbow COR shift during actuation</em>
 </div>
@@ -374,7 +374,7 @@ The SolidWorks files are organised into two self-contained assembly folders — 
 - `Elbow Exoskeleton - Left.sldasm`
 - `Forearm linkage assembly.sldasm`, `Forearm linkage base.sldprt`, `Forearm linkage front.sldprt`
 - `Upper arm linkage - Left.sldprt`
-- `Forearm orthotic R35 - Left.sldprt`, `Forearm orthotic structural insert.sldprt`
+- `Forearm orthotic R45 - Left.sldprt`, `Forearm orthotic structural insert.sldprt`
 - `Upper arm orthotic R55 - Left.sldprt`, `Upper arm orthotic structural insert.sldprt`
 - `Mechanical stop cover.sldprt`
 - `AK45-36-KV80 motor.sldprt`, `ANR Muscle Sense Model M40 EMG sensor.sldprt`
@@ -384,7 +384,7 @@ The SolidWorks files are organised into two self-contained assembly folders — 
 - `Elbow Exoskeleton - Right.sldasm`
 - Same shared parts as above
 - `Upper arm linkage - Right.sldprt`
-- `Forearm orthotic R35 - Right.sldprt`
+- `Forearm orthotic R45 - Right.sldprt`
 - `Upper arm orthotic R55 - Right.sldprt`
 
 > Each assembly folder includes only one orthotic size for the assembly reference model. All sizes (R35/R40/R45 forearm; R45/R50/R55 upper arm) are available as STL files in the `STL files/` folder for printing.
