@@ -363,7 +363,7 @@ All parts use **4 perimeter wall loops**, which is the primary driver of strengt
 
 The SolidWorks files are organised into two self-contained assembly folders under `CAD/` — one per arm side — each containing all parts needed to open and fully resolve the assembly.
 
-**`CAD/Elbow Exoskeleton - Left/`**
+**[`CAD/Elbow Exoskeleton - Left/`](CAD/Elbow%20Exoskeleton%20-%20Left/)**
 - `Elbow Exoskeleton - Left.sldasm`
 - `Forearm linkage assembly.sldasm`, `Forearm linkage base.sldprt`, `Forearm linkage front.sldprt`
 - `Upper arm linkage - Left.sldprt`
@@ -373,36 +373,41 @@ The SolidWorks files are organised into two self-contained assembly folders unde
 - `AK45-36-KV80 motor.sldprt`, `ANR Muscle Sense Model M40 EMG sensor.sldprt`
 - `90592A016_Steel Hex Nut_M6.sldprt`, `92005A427_Steel Pan Head Phillips Screw_M6_18mm.sldprt`, `92005A435_Steel Pan Head Phillips Screw_M6_30mm.sldprt`
 
-**`CAD/Elbow Exoskeleton - Right/`** *(identical structure, right-side mirrored parts)*
+**[`CAD/Elbow Exoskeleton - Right/`](CAD/Elbow%20Exoskeleton%20-%20Right/)** *(identical structure, right-side mirrored parts)*
 - `Elbow Exoskeleton - Right.sldasm`
 - Same shared parts as above
 - `Upper arm linkage - Right.sldprt`
 - `Forearm orthotic R45 - Right.sldprt`
 - `Upper arm orthotic R55 - Right.sldprt`
 
-> Each assembly folder includes only one orthotic size for the assembly reference model. All sizes (R35/R40/R45 forearm; R45/R50/R55 upper arm) are available as STL files in `CAD/STL files/` for printing.
-
-
+> Each assembly folder includes only one orthotic size for the assembly reference model. All sizes (R35/R40/R45 forearm; R45/R50/R55 upper arm) are available as STL files in [`CAD/STL files/`](CAD/STL%20files/) for printing.
 
 ---
 
 ## 🖨️ STL Files & Printing Guide
 
-All print-ready STL files are in `CAD/STL files/`. Pre-configured **Bambu Studio project files (.3mf)** with print settings are in `Print Files/BambuStudio/`.
-
-**Bambu Studio files available:**
+All print-ready STL files are in [`CAD/STL files/`](CAD/STL%20files/). Print settings for each part are listed below. For recommended print orientations for each part, see the **[Print Orientation Guide](Print%20Files/Print%20Orientation%20Guide/PRINT_ORIENTATION_GUIDE.md)**.
 
 | File | Material | Infill | Wall Loops |
 |------|----------|--------|------------|
-| Forearm linkage assembly | PLA | 75% | 4 |
-| Upper arm linkage - Left/Right | PLA | 75% | 4 |
-| Forearm orthotic R35/R40/R45 - Left/Right | TPU | 15% | 4 |
-| Upper arm orthotic R45/R50/R55 - Left/Right | TPU | 15% | 4 |
-| Forearm orthotic structural insert | PLA | 75% | 4 |
-| Upper arm orthotic structural insert | PLA | 75% | 4 |
-| Mechanical stop cover | TPU | 15% | 4 |
-
-> 📸 See `Print Files/Print Orientation Guide/` for screenshots of the recommended print orientations for each part.
+| [Forearm linkage assembly](CAD/STL%20files/Forearm%20linkage%20assembly.STL) | PLA | 75% | 4 |
+| [Upper arm linkage - Left](CAD/STL%20files/Upper%20arm%20linkage%20-%20Left.STL) | PLA | 75% | 4 |
+| [Upper arm linkage - Right](CAD/STL%20files/Upper%20arm%20linkage%20-%20Right.STL) | PLA | 75% | 4 |
+| [Forearm orthotic R35 - Left](CAD/STL%20files/Forearm%20orthotic%20R35%20-%20Left.STL) | TPU | 15% | 4 |
+| [Forearm orthotic R35 - Right](CAD/STL%20files/Forearm%20orthotic%20R35%20-%20Right.STL) | TPU | 15% | 4 |
+| [Forearm orthotic R40 - Left](CAD/STL%20files/Forearm%20orthotic%20R40%20-%20Left.STL) | TPU | 15% | 4 |
+| [Forearm orthotic R40 - Right](CAD/STL%20files/Forearm%20orthotic%20R40%20-%20Right.STL) | TPU | 15% | 4 |
+| [Forearm orthotic R45 - Left](CAD/STL%20files/Forearm%20orthotic%20R45%20-%20Left.STL) | TPU | 15% | 4 |
+| [Forearm orthotic R45 - Right](CAD/STL%20files/Forearm%20orthotic%20R45%20-%20Right.STL) | TPU | 15% | 4 |
+| [Upper arm orthotic R45 - Left](CAD/STL%20files/Upper%20arm%20orthotic%20R45%20-%20Left.STL) | TPU | 15% | 4 |
+| [Upper arm orthotic R45 - Right](CAD/STL%20files/Upper%20arm%20orthotic%20R45%20-%20Right.STL) | TPU | 15% | 4 |
+| [Upper arm orthotic R50 - Left](CAD/STL%20files/Upper%20arm%20orthotic%20R50%20-%20Left.STL) | TPU | 15% | 4 |
+| [Upper arm orthotic R50 - Right](CAD/STL%20files/Upper%20arm%20orthotic%20R50%20-%20Right.STL) | TPU | 15% | 4 |
+| [Upper arm orthotic R55 - Left](CAD/STL%20files/Upper%20arm%20orthotic%20R55%20-%20Left.STL) | TPU | 15% | 4 |
+| [Upper arm orthotic R55 - Right](CAD/STL%20files/Upper%20arm%20orthotic%20R55%20-%20Right.STL) | TPU | 15% | 4 |
+| [Forearm orthotic structural insert](CAD/STL%20files/Forearm%20orthotic%20structural%20insert.STL) | PLA | 75% | 4 |
+| [Upper arm orthotic structural insert](CAD/STL%20files/Upper%20arm%20orthotic%20structural%20insert.STL) | PLA | 75% | 4 |
+| [Mechanical stop cover](CAD/STL%20files/Mechancial%20stop%20cover.STL) | TPU | 15% | 4 |
 
 ---
 
