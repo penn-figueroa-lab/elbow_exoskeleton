@@ -230,8 +230,8 @@ The **forearm linkage assembly is identical** across both versions. Only the fol
 
 <div align="center">
 <p float="left">
-  <img src="Images/Elbow_Exo_Left_Hand_Iso_View.png" alt="Left arm version" width="40%" />
-  <img src="Images/Elbow_Exo_Right_Hand_Iso_View.png" alt="Right arm version" width="40%" />
+  <img src="Images/Elbow_Exo_Left_Hand_Iso_View.jpg" alt="Left arm version" width="40%" />
+  <img src="Images/Elbow_Exo_Right_Hand_Iso_View.jpg" alt="Right arm version" width="40%" />
 </p>
 <em>Left (left) and Right (right) arm versions of the elbow exoskeleton assembly</em>
 </div>
@@ -276,8 +276,8 @@ The **upper arm orthotic** additionally includes **2 recessed EMG sensor slots**
 
 <div align="center">
 <p float="left">
-  <img src="Images/Elbow_Exo_Upper_Arm_Orthotic_R55_Left.png" alt="Upper arm orthotic with EMG slots" width="45%" />
-  <img src="Images/Elbow_Exo_Forearm_Orthotic_R45_Left.png" alt="Forearm orthotic" width="45%" />
+  <img src="Images/Elbow_Exo_Upper_Arm_Orthotic_R55_Left.jpg" alt="Upper arm orthotic with EMG slots" width="45%" />
+  <img src="Images/Elbow_Exo_Forearm_Orthotic_R45_Left.jpg" alt="Forearm orthotic" width="45%" />
 </p>
 <em>Upper arm orthotic (left) showing EMG sensor slots and shoe lace holes; Forearm orthotic (right) showing tapered geometry and lace holes</em>
 </div>
@@ -304,15 +304,15 @@ To compensate, the forearm linkage is split into two pieces — a **base** and a
 
 <div align="center">
 <p float="left">
-  <img src="Images/Elbow_Exo_Forearm_Linkage_in_2_Pieces.png" alt="Snap-fit two separate pieces" width="60%" />
+  <img src="Images/Elbow_Exo_Forearm_Linkage_in_2_Pieces.jpg" alt="Snap-fit two separate pieces" width="60%" />
 </p>
 <em>The two pieces of the forearm linkage — base (bottom) and front (top) — before assembly</em>
 </div>
 
 <div align="center">
 <p float="left">
-  <img src="Images/Elbow_Exo_Forearm_Linkage_Close_Position.png" alt="Snap-fit closed/retracted position" width="45%" />
-  <img src="Images/Elbow_Exo_Forearm_Linkage_Open_Position.png" alt="Snap-fit open/extended position" width="45%" />
+  <img src="Images/Elbow_Exo_Forearm_Linkage_Close_Position.jpg" alt="Snap-fit closed/retracted position" width="45%" />
+  <img src="Images/Elbow_Exo_Forearm_Linkage_Open_Position.jpg" alt="Snap-fit open/extended position" width="45%" />
 </p>
 <em>Snap-fit forearm linkage in retracted position (left) and extended position (right), passively accommodating the ~8 mm elbow COR shift during actuation</em>
 </div>
