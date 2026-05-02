@@ -130,7 +130,7 @@ elbow_exoskeleton/
 └── README.md
 ```
 
-> **Note on Left vs. Right folders:** Each assembly folder contains all parts needed to open and rebuild that assembly in SolidWorks — shared parts (forearm linkage, structural inserts, hardware) are duplicated across both folders for self-containment. The only parts that differ between folders are the upper arm linkage, upper arm orthotic, and forearm orthotic, which are mirrored versions of each other. Only **one orthotic size is included per assembly folder** (the example shown uses R45 forearm / R55 upper arm) — select the appropriate size for your subject from the full set in `STL files/`.
+> **Note on Left vs. Right folders:** Each assembly folder contains all parts needed to open and rebuild that assembly in SolidWorks — shared parts (forearm linkage, structural inserts, hardware) are duplicated across both folders for self-containment. The only parts that differ between folders are the upper arm linkage, upper arm orthotic, and forearm orthotic, which are mirrored versions of each other. Only **one orthotic size is included per assembly folder** (the example shown uses R45 forearm / R55 upper arm) — select the appropriate size for your subject from the full set in `CAD/STL files/`.
 
 ---
 
@@ -361,9 +361,9 @@ All parts use **4 perimeter wall loops**, which is the primary driver of strengt
 
 ## 📐 CAD Files
 
-The SolidWorks files are organised into two self-contained assembly folders — one per arm side — each containing all parts needed to open and fully resolve the assembly. The folder contents match the uploaded zip files shown below.
+The SolidWorks files are organised into two self-contained assembly folders under `CAD/` — one per arm side — each containing all parts needed to open and fully resolve the assembly.
 
-**`Elbow Exoskeleton - Left/`**
+**`CAD/Elbow Exoskeleton - Left/`**
 - `Elbow Exoskeleton - Left.sldasm`
 - `Forearm linkage assembly.sldasm`, `Forearm linkage base.sldprt`, `Forearm linkage front.sldprt`
 - `Upper arm linkage - Left.sldprt`
@@ -373,14 +373,14 @@ The SolidWorks files are organised into two self-contained assembly folders — 
 - `AK45-36-KV80 motor.sldprt`, `ANR Muscle Sense Model M40 EMG sensor.sldprt`
 - `90592A016_Steel Hex Nut_M6.sldprt`, `92005A427_Steel Pan Head Phillips Screw_M6_18mm.sldprt`, `92005A435_Steel Pan Head Phillips Screw_M6_30mm.sldprt`
 
-**`Elbow Exoskeleton - Right/`** *(identical structure, right-side mirrored parts)*
+**`CAD/Elbow Exoskeleton - Right/`** *(identical structure, right-side mirrored parts)*
 - `Elbow Exoskeleton - Right.sldasm`
 - Same shared parts as above
 - `Upper arm linkage - Right.sldprt`
 - `Forearm orthotic R45 - Right.sldprt`
 - `Upper arm orthotic R55 - Right.sldprt`
 
-> Each assembly folder includes only one orthotic size for the assembly reference model. All sizes (R35/R40/R45 forearm; R45/R50/R55 upper arm) are available as STL files in the `STL files/` folder for printing.
+> Each assembly folder includes only one orthotic size for the assembly reference model. All sizes (R35/R40/R45 forearm; R45/R50/R55 upper arm) are available as STL files in `CAD/STL files/` for printing.
 
 
 
@@ -388,7 +388,7 @@ The SolidWorks files are organised into two self-contained assembly folders — 
 
 ## 🖨️ STL Files & Printing Guide
 
-All print-ready STL files are in `STL files/`. Pre-configured **Bambu Studio project files (.3mf)** with print settings are in `Print Files/BambuStudio/`.
+All print-ready STL files are in `CAD/STL files/`. Pre-configured **Bambu Studio project files (.3mf)** with print settings are in `Print Files/BambuStudio/`.
 
 **Bambu Studio files available:**
 
