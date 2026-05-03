@@ -391,20 +391,21 @@ All parts use **4 perimeter wall loops**, which is the primary driver of strengt
 
 ## 🦾 Donning & Doffing
 
+The exoskeleton is worn and removed as a **single fully-assembled unit** — the linkages, orthotics, and motor are not disassembled between uses. Donning and doffing simply involves sliding the assembled system onto or off the arm.
+
 ### Putting On
 
 1. Loosen the shoe laces on both orthotics fully.
-2. With the arm **straight out** (fully extended, 0°), slide the **upper arm orthotic** on first, positioning it along the upper arm.
-3. Slide the **forearm orthotic** on next, positioning it along the forearm.
-4. Adjust both orthotics until the **motor sits at the elbow joint center of rotation** — this alignment is critical for comfort and effective torque transmission.
-5. Tighten the shoe laces on both orthotics until they are secure but not uncomfortable for the user.
-6. Connect the electronics and power source. The exoskeleton is ready to operate.
+2. With the arm **straight out** (fully extended, 0°), slide the assembled exoskeleton onto the arm — the **upper arm orthotic end goes on first**, positioning it along the upper arm.
+3. Continue sliding the assembly along the arm until the **forearm orthotic sits along the forearm** and, critically, the **motor sits at the elbow joint center of rotation**. This alignment is essential for comfort and effective torque transmission.
+4. Tighten the shoe laces on both orthotics until they are secure but not uncomfortable for the user.
+5. Connect the electronics and power source. The exoskeleton is ready to operate.
 
 ### Taking Off
 
 1. Power down and disconnect the electronics and power source.
 2. Loosen the shoe laces on both orthotics.
-3. Remove the forearm orthotic first, followed by the upper arm orthotic.
+3. Slide the entire assembled exoskeleton off the arm, **forearm end first**.
 
 ---
 
