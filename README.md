@@ -33,6 +33,8 @@
   - [3. Comparative Controller Evaluation](#3-comparative-controller-evaluation)
 - [CAD Files](#-cad-files)
 - [STL Files & Printing Guide](#-stl-files--printing-guide)
+- [Assembly Instructions](#-assembly-instructions)
+- [Donning & Doffing](#-donning--doffing)
 - [Performance Results](#-performance-results)
 - [Acknowledgments](#-acknowledgments)
 
@@ -356,6 +358,53 @@ All parts use **4 perimeter wall loops**, which is the primary driver of strengt
 | 6 mm EVA foam sheet | ~400 cm² | Inner orthotic padding |
 | Barge contact cement | Small amount | Bonding EVA foam to orthotics |
 | Shoe laces | 2 pairs | Securing orthotics to user |
+
+---
+
+## 🔩 Assembly Instructions
+
+### Part 1 — Print & Hardware Prep
+
+1. Print all 3D printed parts using the provided `.3mf` files (see [STL Files & Printing Guide](#-stl-files--printing-guide)). Remove all supports after printing — note that TPU support removal is particularly time-consuming.
+2. Gather all hardware: M3 screws, M6 screws, M6 hex nuts, and mechanical stop covers.
+
+### Part 2 — EVA Foam Padding
+
+3. Cut the 6 mm EVA foam sheets to the approximate shape of the inner surface of each orthotic.
+4. Apply Barge contact cement to both the EVA foam and the inner surface of the orthotic. Allow to become tacky per the cement's instructions, then press the foam firmly onto the orthotic interior.
+5. Trim any excess foam with scissors so it sits flush with the orthotic edges.
+6. Place a cylindrical object (e.g. a water bottle or PVC pipe of similar diameter) inside each orthotic to apply constant outward pressure on the foam against the orthotic wall while the cement fully cures. Leave until fully adhered.
+
+### Part 3 — Orthotic Assembly
+
+7. Thread shoe laces through the 6 lace holes on each side of both orthotics.
+8. Screw each orthotic to its respective linkage using the orthotic mounting holes. Select the mounting hole position that best matches the user's arm length for optimal coverage and comfort.
+9. Press the PLA structural inserts into the orthotic-to-linkage interface locations to reinforce those areas against torsional twist during actuation.
+
+### Part 4 — Linkage-to-Motor Assembly
+
+10. Attach the forearm linkage assembly to the Cubemars AK45-36 motor output shaft using M3 screws.
+11. Attach the upper arm linkage to the motor body using M3 screws.
+12. Install the two M6 hardware stops: the fixed-hole stop for the 0° (full extension) limit and the slot-mounted stop for the 115°–140° (full flexion) limit. Fit the TPU mechanical stop covers over each screw head.
+
+---
+
+## 🦾 Donning & Doffing
+
+### Putting On
+
+1. Loosen the shoe laces on both orthotics fully.
+2. With the arm **straight out** (fully extended, 0°), slide the **upper arm orthotic** on first, positioning it along the upper arm.
+3. Slide the **forearm orthotic** on next, positioning it along the forearm.
+4. Adjust both orthotics until the **motor sits at the elbow joint center of rotation** — this alignment is critical for comfort and effective torque transmission.
+5. Tighten the shoe laces on both orthotics until they are secure but not uncomfortable for the user.
+6. Connect the electronics and power source. The exoskeleton is ready to operate.
+
+### Taking Off
+
+1. Power down and disconnect the electronics and power source.
+2. Loosen the shoe laces on both orthotics.
+3. Remove the forearm orthotic first, followed by the upper arm orthotic.
 
 ---
 
