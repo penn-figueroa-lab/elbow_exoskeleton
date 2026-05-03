@@ -386,7 +386,7 @@ The SolidWorks files are organised into two self-contained assembly folders unde
 
 ## 🖨️ STL Files & Printing Guide
 
-All print-ready STL files are in [`CAD/STL files/`](CAD/STL%20files/). Print settings for each part are listed below. For recommended print orientations for each part, see the **[Print Orientation Guide](Print%20Files/Print%20Orientation%20Guide/PRINT_ORIENTATION_GUIDE.md)**.
+All print-ready STL files are in [`CAD/STL files/`](CAD/STL%20files/). Print settings for each part are listed below. For recommended print orientations and bed setups for each part, see the **[Print Guide](Print%20Files/Print%20Orientation%20Guide/PRINT_ORIENTATION_GUIDE.md)**. The Bambu Studio `.3mf` files below are configured for the **Bambu Lab P1S**.
 
 | File | Material | Infill | Wall Loops |
 |------|----------|--------|------------|
@@ -408,6 +408,15 @@ All print-ready STL files are in [`CAD/STL files/`](CAD/STL%20files/). Print set
 | [Forearm orthotic structural insert](CAD/STL%20files/Forearm%20orthotic%20structural%20insert.STL) | PLA | 75% | 4 |
 | [Upper arm orthotic structural insert](CAD/STL%20files/Upper%20arm%20orthotic%20structural%20insert.STL) | PLA | 75% | 4 |
 | [Mechanical stop cover](CAD/STL%20files/Mechancial%20stop%20cover.STL) | TPU | 15% | 4 |
+
+**Bambu Studio `.3mf` files** (pre-configured for Bambu Lab P1S, located in `Print Files/BambuStudio/`):
+
+| .3mf File | Contents | Material |
+|-----------|----------|----------|
+| `Elbow_Exoskeleton_Left_Linkage_&_Inserts_Prints.3mf` | Forearm linkage assembly + Upper arm linkage Left + both structural inserts | PLA |
+| `Elbow_Exoskeleton_Left_Orthotics_&_Mechanical_Stop.3mf` | Forearm orthotic R35 Left + Upper arm orthotic R45 Left + Mechanical stop cover ×2 | TPU |
+| `Elbow_Exoskeleton_Right_Linkage_&_Inserts_Prints.3mf` | Forearm linkage assembly + Upper arm linkage Right + both structural inserts | PLA |
+| `Elbow_Exoskeleton_Right_Orthotics_&_Mechanical_Stop.3mf` | Forearm orthotic R35 Right + Upper arm orthotic R45 Right + Mechanical stop cover ×2 | TPU |
 
 ---
 
